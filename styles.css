@@ -1,0 +1,160 @@
+/* ============ Variables de identidad visual ============ */
+:root {
+  --cava-dark: #2b0f17;       /* vino oscuro */
+  --cava-wine: #6b1d2e;
+  --cava-gold: #c9a24b;       /* dorado */
+  --cava-gold-dark: #a8832f;
+  --cava-cream: #fbf7f0;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--cava-cream);
+  color: #2a2a2a;
+}
+
+/* ============ Utilidades de marca ============ */
+.bg-cava { background-color: var(--cava-dark) !important; }
+.text-gold { color: var(--cava-gold) !important; }
+
+.btn-gold {
+  background-color: var(--cava-gold);
+  border-color: var(--cava-gold);
+  color: #1d1d1d;
+  font-weight: 600;
+}
+.btn-gold:hover, .btn-gold:focus {
+  background-color: var(--cava-gold-dark);
+  border-color: var(--cava-gold-dark);
+  color: #fff;
+}
+.btn-outline-gold {
+  color: var(--cava-gold-dark);
+  border-color: var(--cava-gold);
+}
+.btn-outline-gold:hover, .btn-outline-gold:focus {
+  background-color: var(--cava-gold);
+  color: #1d1d1d;
+}
+.navbar .btn-outline-gold { color: var(--cava-gold); }
+.navbar .btn-outline-gold:hover { color: #1d1d1d; }
+
+/* Foco visible (accesibilidad) */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--cava-gold);
+  outline-offset: 2px;
+}
+
+/* ============ Navbar ============ */
+.navbar .nav-link { color: rgba(255, 255, 255, .8); }
+.navbar .nav-link:hover,
+.navbar .nav-link.active { color: var(--cava-gold); }
+
+/* ============ Títulos de sección ============ */
+.section-title {
+  font-weight: 700;
+  color: var(--cava-wine);
+  position: relative;
+  padding-bottom: .6rem;
+  margin-bottom: .5rem;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: var(--cava-gold);
+  margin: .5rem auto 0;
+  border-radius: 2px;
+}
+
+/* ============ Hero / Carrusel ============ */
+.hero-slide {
+  min-height: 70vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.hero-1 { background: linear-gradient(120deg, #2b0f17 0%, #6b1d2e 100%); }
+.hero-2 { background: linear-gradient(120deg, #3a2a05 0%, #a8832f 100%); }
+.hero-3 { background: linear-gradient(120deg, #0f2b22 0%, #1f6b52 100%); }
+.hero-content { padding: 4rem 0; max-width: 960px; }
+.hero-content .lead { max-width: 560px; }
+
+/* ============ Categorías ============ */
+.category-card {
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+  background: #fff;
+  width: 100%;
+  text-align: center;
+}
+.category-card:hover { transform: translateY(-4px); box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .12); }
+.category-card.active { border-color: var(--cava-gold); background: #fff8e6; }
+.category-card .cat-emoji { font-size: 2.2rem; }
+
+/* ============ Tarjetas de producto ============ */
+.product-card { transition: transform .2s, box-shadow .2s; border: 0; overflow: hidden; }
+.product-card:hover { transform: translateY(-5px); box-shadow: 0 .8rem 1.4rem rgba(0, 0, 0, .15) !important; }
+
+.product-img {
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4.5rem;
+  position: relative;
+}
+.badge-promo { position: absolute; top: .6rem; left: .6rem; font-size: .8rem; }
+
+/* Fondos por categoría */
+.theme-whisky       { background: linear-gradient(135deg, #f6d8a0, #c98a2c); }
+.theme-ron          { background: linear-gradient(135deg, #f2c9a0, #9a5b2b); }
+.theme-vino         { background: linear-gradient(135deg, #e7b4c0, #7a1f3a); }
+.theme-cerveza      { background: linear-gradient(135deg, #fbe9a6, #d9a21b); }
+.theme-aguardiente  { background: linear-gradient(135deg, #d9efe3, #6bb59a); }
+.theme-vodka        { background: linear-gradient(135deg, #e3eefb, #86a9d6); }
+
+.price-old { text-decoration: line-through; color: #8a8a8a; font-size: .85rem; }
+.price-now { font-weight: 700; font-size: 1.15rem; color: var(--cava-wine); }
+
+/* ============ Promociones ============ */
+.promo-card { border: 2px dashed var(--cava-gold); background: #fff; transition: transform .2s; }
+.promo-card:hover { transform: scale(1.02); }
+
+/* ============ Carrito ============ */
+.cart-item-emoji {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  border-radius: .5rem;
+  background: #f3ece0;
+  flex-shrink: 0;
+}
+.qty-btn { width: 30px; height: 30px; padding: 0; line-height: 1; }
+.offcanvas { max-width: 100vw; }
+
+/* ============ Formulario ============ */
+.form-control:focus, .form-select:focus, .form-check-input:focus {
+  border-color: var(--cava-gold);
+  box-shadow: 0 0 0 .25rem rgba(201, 162, 75, .25);
+}
+.form-check-input:checked { background-color: var(--cava-wine); border-color: var(--cava-wine); }
+
+/* ============ Responsive ============ */
+@media (max-width: 575.98px) {
+  .hero-slide { min-height: 60vh; }
+  .hero-content h1, .hero-content h2 { font-size: 2rem; }
+  .product-img { height: 140px; font-size: 3.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
